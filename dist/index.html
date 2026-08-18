@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self'; script-src 'self'">
+  <title>合众兴 · 自动化控制台</title>
+  <script type="module" crossorigin src="./assets/index-Bxgd-FkN.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-MHhPN5uP.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="control-panel" aria-labelledby="page-title">
+      <div>
+        <p class="eyebrow">合众兴内部工具</p>
+        <h1 id="page-title">拼多多自动化</h1>
+        <p class="description">启动本机已配置的影刀流程，并在下方查看运行记录。</p>
+      </div>
+      <div class="status-row" aria-live="polite">
+        <span id="statusDot" class="status-dot" aria-hidden="true"></span>
+        <span id="statusText">等待启动</span>
+      </div>
+      <button id="startButton" type="button">
+        <svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
+        <span>启动自动化</span>
+      </button>
+    </section>
+    <section class="log-panel" aria-labelledby="log-title">
+      <header><h2 id="log-title">运行日志</h2><span id="logCount">0 条</span></header>
+      <div id="logList" class="log-list" role="log" aria-live="polite" aria-relevant="additions">
+        <p class="empty-log">启动后，运行信息会显示在这里。</p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
