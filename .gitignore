@@ -1,11 +1,9 @@
 node_modules/
 .electron-cache/
 .vite/
-dist/
 release/
 electron/dist/
 tests/
-docs/
 .DS_Store
 *.log
 合众兴项目立项报告书.docx
@@ -18,3 +16,7 @@ font-preview.html
 preview/
 vendor/
 *.zip
+
+# 保留 dist/ 和 docs/ 在 repo 里
+# dist/  - 预构建静态站
+# docs/   - GH Pages 部署目录（= dist 内容）
