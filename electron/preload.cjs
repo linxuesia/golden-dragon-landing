@@ -1,0 +1,2 @@
+const{contextBridge,ipcRenderer}=require('electron');
+contextBridge.exposeInMainWorld('automation',{start:()=>ipcRenderer.invoke('automation:start'),install:()=>ipcRenderer.invoke('automation:install'),fallback:()=>ipcRenderer.invoke('automation:fallback'),onLog:listener=>ipcRenderer.on('automation:log',(_event,entry)=>listener(entry)),onState:listener=>ipcRenderer.on('automation:state',(_event,state)=>listener(state))});

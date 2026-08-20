@@ -1,0 +1,59 @@
+/* Three.js demo 专用样式 */
+.threejs-body {
+  background: #080807;
+  overflow: hidden;
+}
+#dragon-canvas {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  cursor: grab;
+}
+#dragon-canvas:active { cursor: grabbing; }
+
+.threejs-hero {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  padding: 0 0 0 60px;
+  pointer-events: none;  /* 让 canvas 收 drag */
+}
+.threejs-hero .hero-copy,
+.threejs-hero .hero-copy * {
+  pointer-events: auto;
+}
+.threejs-stats {
+  display: flex;
+  gap: 20px;
+  margin-top: 28px;
+}
+.threejs-stats > div {
+  font-family: 'JetBrains Mono', monospace;
+}
+.threejs-stats dt {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.5);
+  letter-spacing: 0.2em;
+  margin-bottom: 2px;
+  text-transform: uppercase;
+}
+.threejs-stats dd {
+  font-size: 14px;
+  font-weight: 700;
+  color: #FFD57A;
+}
+
+/* 让三个 demo 页共用 video-demo 的 app.css */
+.topbar, .control-deck {
+  z-index: 5 !important;
+}
+
+/* 三个 demo 的返回按钮 */
+.control-deck__facts div:nth-child(3) dd {
+  color: #4ECDC4;
+  font-weight: 600;
+}

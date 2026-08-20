@@ -1,6 +1,7 @@
 node_modules/
 .electron-cache/
 .vite/
+.firecrawl/
 release/
 electron/dist/
 tests/

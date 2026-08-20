@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#080807" />
+    <meta name="description" content="龙震电商 - Three.js 实时渲染版" />
+    <title>龙震电商 | Three.js 实时渲染版</title>
+    <script type="module" crossorigin src="../../assets/threejs-Bspo8LX7.js"></script>
+    <link rel="modulepreload" crossorigin href="../../assets/modulepreload-polyfill-B5Qt9EMX.js">
+    <link rel="stylesheet" crossorigin href="../../assets/threejs-BW9AocAp.css">
+    <link rel="stylesheet" crossorigin href="../../assets/app-CwmJcljo.css">
+  </head>
+  <body class="threejs-body">
+    <canvas id="dragon-canvas"></canvas>
+
+    <header class="topbar ui-layer">
+      <a class="brand" href="../index.html" aria-label="返回 Landing">
+        <span class="brand__seal">龍</span>
+        <span class="brand__copy">
+          <strong>龙震电商</strong>
+          <small>THREE.JS · LIVE</small>
+        </span>
+      </a>
+      <nav class="main-nav" aria-label="主导航">
+        <a class="is-current" href="#">主视觉</a>
+        <a href="#">视角</a>
+        <a href="#">环境</a>
+      </nav>
+      <div class="engine-state">
+        <span class="engine-state__pulse"></span>
+        <span>实时渲染 · 60 FPS</span>
+      </div>
+    </header>
+
+    <main class="threejs-hero ui-layer">
+      <section class="hero-copy">
+        <p class="hero-copy__eyebrow">REAL-TIME WEBGL</p>
+        <h1 id="hero-title"><span>实时龙魂</span><em>Three.js 渲染</em></h1>
+        <p class="hero-copy__body">glTF 龙模型 + 自定义雾效 shader，逐帧计算光线与粒子，零视频文件依赖。</p>
+        <div class="hero-actions">
+          <button class="launch-button" id="rotate-toggle" type="button">
+            <span class="launch-button__label">暂停旋转</span>
+            <span class="launch-button__rail" aria-hidden="true">
+              <i class="launch-button__seal">自</i>
+            </span>
+          </button>
+          <button class="secondary-button" id="mist-toggle" type="button">切换雾效</button>
+        </div>
+        <div class="threejs-stats">
+          <div><dt>模型</dt><dd>scene.gltf · 19 MB</dd></div>
+          <div><dt>纹理</dt><dd>4 张 PBR</dd></div>
+          <div><dt>FPS</dt><dd id="fps-readout">--</dd></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="control-deck ui-layer">
+      <div class="control-deck__context">
+        <span>视图控制</span>
+        <strong id="deck-state">拖拽旋转 · 滚轮缩放</strong>
+      </div>
+      <dl class="control-deck__facts">
+        <div>
+          <dt>渲染器</dt>
+          <dd>WebGL · Three.js</dd>
+        </div>
+        <div>
+          <dt>场景</dt>
+          <dd>glTF + 自定义 shader</dd>
+        </div>
+        <div>
+          <dt>加载状态</dt>
+          <dd id="load-status">载入中</dd>
+        </div>
+      </dl>
+      <button class="sound-control" id="reset-camera" type="button">
+        <span>视图</span><strong>复位</strong>
+      </button>
+    </footer>
+
+    <div class="loading-screen" id="loading-screen" role="status" aria-live="polite">
+      <div class="loading-emblem"><span>龍</span></div>
+      <p class="loading-title">正在加载龙模型</p>
+      <div class="loading-track"><i id="loading-bar"></i></div>
+      <p class="loading-detail" id="loading-detail">预载 glTF · 19 MB</p>
+    </div>
+
+    <div class="completion-toast" id="ready-toast" role="status">模型就绪 · 可以交互</div>
+
+  </body>
+</html>

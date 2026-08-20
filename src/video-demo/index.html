@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#080807" />
+    <meta name="description" content="龙震电商自动化应用视频主视觉演示" />
+    <title>龙震电商 | 视频动效版</title>
+    <link rel="stylesheet" href="./app.css" />
+  </head>
+  <body>
+    <div id="app" class="app" data-phase="loading">
+      <div class="media-stage" aria-hidden="true">
+        <video class="dragon-video is-active" data-video="0" data-file="/videos/v1.mp4" preload="auto" muted playsinline></video>
+        <video class="dragon-video" data-video="1" data-file="/videos/v2.mp4" preload="auto" muted playsinline loop></video>
+        <video class="dragon-video" data-video="2" data-file="/videos/v3.mp4" preload="auto" muted playsinline></video>
+        <video class="dragon-video" data-video="3" data-file="/videos/v4.mp4" preload="auto" muted playsinline></video>
+      </div>
+
+      <div class="scene-treatment" aria-hidden="true">
+        <div class="scene-treatment__shade"></div>
+        <div class="scene-treatment__gold"></div>
+        <div class="scene-treatment__grain"></div>
+      </div>
+
+      <div class="loading-screen" role="status" aria-live="polite">
+        <div class="loading-emblem"><span>龍</span></div>
+        <p class="loading-title">龙震引擎正在就绪</p>
+        <div class="loading-track"><i></i></div>
+        <p class="loading-detail" id="loading-detail">正在预载主视觉</p>
+      </div>
+
+      <header class="topbar ui-layer">
+        <a class="brand" href="../index.html" aria-label="返回 Landing">
+          <span class="brand__seal">龍</span>
+          <span class="brand__copy">
+            <strong>龙震电商</strong>
+            <small>VIDEO · DEMO</small>
+          </span>
+        </a>
+
+        <nav class="main-nav" aria-label="主导航">
+          <a class="is-current" href="#">工作台</a>
+          <a href="#">批次管理</a>
+          <a href="#">参数配置</a>
+          <a href="#">日志审计</a>
+        </nav>
+
+        <div class="engine-state" aria-label="引擎状态">
+          <span class="engine-state__pulse"></span>
+          <span>自动化引擎已就绪</span>
+        </div>
+      </header>
+
+      <main class="hero ui-layer">
+        <section class="hero-copy" aria-labelledby="hero-title">
+          <p class="hero-copy__eyebrow">LONGZHEN COMMERCE</p>
+          <h1 id="hero-title"><span>批量上架</span><em>智能运营</em></h1>
+          <p class="hero-copy__body">配置一次，自动完成商品上架、标题差异化与批次调度。</p>
+          <div class="hero-actions">
+            <button class="launch-button" id="launch-button" type="button" disabled>
+              <span class="launch-button__label">启动应用</span>
+              <span class="launch-button__rail" aria-hidden="true">
+                <i class="launch-button__seal">启</i>
+              </span>
+            </button>
+            <button class="secondary-button" type="button">新建批次</button>
+          </div>
+        </section>
+      </main>
+
+      <section class="action-hud" aria-live="polite" aria-atomic="true">
+        <p class="action-hud__label" id="action-label">正在唤醒龙震引擎</p>
+        <div class="action-hud__line"><i id="action-progress"></i></div>
+        <p class="action-hud__step" id="action-step">腾空</p>
+      </section>
+
+      <footer class="control-deck ui-layer">
+        <div class="control-deck__context">
+          <span>任务控制台</span>
+          <strong id="deck-state">等待启动</strong>
+        </div>
+        <dl class="control-deck__facts">
+          <div>
+            <dt>运行环境</dt>
+            <dd>本地执行</dd>
+          </div>
+          <div>
+            <dt>当前批次</dt>
+            <dd>等待选择</dd>
+          </div>
+          <div>
+            <dt>执行策略</dt>
+            <dd>安全校验</dd>
+          </div>
+        </dl>
+        <button class="sound-control" id="sound-control" type="button" aria-pressed="false">
+          <span>声效</span><strong>关</strong>
+        </button>
+      </footer>
+
+      <div class="completion-toast" id="completion-toast" role="status">启动演示已完成</div>
+
+      <section class="error-screen" role="alert">
+        <div>
+          <span class="error-screen__code">MEDIA ERROR</span>
+          <h2>视频素材未能载入</h2>
+          <p>请确认 v1、v2、v3、v4 位于 public/videos 目录。</p>
+          <button id="retry-button" type="button">重新载入</button>
+        </div>
+      </section>
+    </div>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>

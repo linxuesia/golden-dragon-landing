@@ -13,9 +13,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
-    <script type="module" crossorigin src="./assets/main-DibrjYJ7.js"></script>
-    <link rel="modulepreload" crossorigin href="./assets/modulepreload-polyfill-B5Qt9EMX.js">
-    <link rel="stylesheet" crossorigin href="./assets/main-isKFG8Ha.css">
+    <link rel="stylesheet" href="./src/landing.css" />
   </head>
   <body>
     <header class="landing-nav">
@@ -84,7 +82,7 @@
         <article class="demo-card demo-3d">
           <a class="demo-link" href="./src/threejs-demo/index.html">
             <div class="demo-preview">
-              <img src="./assets/longwei-dragon-head-D6C9heek.png" alt="Three.js 龙模型预览" loading="lazy" />
+              <img src="./public/assets/longwei-dragon-head.png" alt="Three.js 龙模型预览" loading="lazy" />
               <div class="demo-overlay">
                 <span class="demo-cta">进入 Three.js 实时渲染 →</span>
               </div>
@@ -117,7 +115,7 @@
           <a class="demo-link" href="./src/video-demo/index.html">
             <div class="demo-preview">
               <video muted loop playsinline preload="metadata" poster="" onmouseenter="this.play()" onmouseleave="this.pause()">
-                <source src="./assets/v1-CHGTgvfe.mp4" type="video/mp4" />
+                <source src="./public/videos/v1.mp4" type="video/mp4" />
               </video>
               <div class="demo-overlay">
                 <span class="demo-cta">进入视频动效版 →</span>
@@ -219,5 +217,6 @@
       <div class="footer-line">© 2026 龙震电商 demo · by sia</div>
     </section>
 
+    <script type="module" src="./src/landing.js"></script>
   </body>
 </html>

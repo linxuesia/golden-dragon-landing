@@ -1,36 +1,223 @@
 <!doctype html>
 <html lang="zh-CN">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self'; script-src 'self'">
-  <title>合众兴 · 自动化控制台</title>
-  <script type="module" crossorigin src="./assets/index-Bxgd-FkN.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-MHhPN5uP.css">
-</head>
-<body>
-  <main class="app-shell">
-    <section class="control-panel" aria-labelledby="page-title">
-      <div>
-        <p class="eyebrow">合众兴内部工具</p>
-        <h1 id="page-title">拼多多自动化</h1>
-        <p class="description">启动本机已配置的影刀流程，并在下方查看运行记录。</p>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#080807" />
+    <meta name="description" content="龙震电商 · Three.js 实时渲染 + 视频动效 双方案展示" />
+    <title>龙震电商 · 龙主题展示</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <script type="module" crossorigin src="./assets/main-DibrjYJ7.js"></script>
+    <link rel="modulepreload" crossorigin href="./assets/modulepreload-polyfill-B5Qt9EMX.js">
+    <link rel="stylesheet" crossorigin href="./assets/main-isKFG8Ha.css">
+  </head>
+  <body>
+    <header class="landing-nav">
+      <a class="ln-brand" href="#top">
+        <span class="ln-seal">龍</span>
+        <span class="ln-copy">
+          <strong>龙震电商</strong>
+          <small>LONGZHEN · AUTOMATION</small>
+        </span>
+      </a>
+      <ul class="ln-links">
+        <li><a href="#demos">双方案</a></li>
+        <li><a href="#stack">技术</a></li>
+        <li><a href="#contact">联系</a></li>
+      </ul>
+      <a class="ln-cta" href="./src/threejs-demo/index.html">看 3D →</a>
+    </header>
+
+    <!-- HERO -->
+    <section class="landing-hero" id="top">
+      <div class="lh-blob lh-blob-1"></div>
+      <div class="lh-blob lh-blob-2"></div>
+      <div class="lh-blob lh-blob-3"></div>
+      <div class="lh-grain"></div>
+
+      <div class="lh-content">
+        <p class="lh-eyebrow">PROJECT · SHOWCASE</p>
+        <h1 class="lh-title">
+          <span class="lh-line-1">龙震电商</span>
+          <span class="lh-line-2">主视觉方案</span>
+        </h1>
+        <p class="lh-sub">
+          为「龙震电商」桌面端主视觉提供
+          <strong>两套实现路径</strong>：
+          <em class="accent-gold">Three.js 实时渲染</em> 与
+          <em class="accent-coral">视频动效</em>。
+          同等品质，不同取舍，按场景挑选。
+        </p>
+        <div class="lh-meta">
+          <span class="lh-meta-item"><strong>3D</strong> glTF + 自定义雾效 shader</span>
+          <span class="lh-meta-item"><strong>视频</strong> 4 段 MP4 循环 / 渐变切换</span>
+          <span class="lh-meta-item"><strong>风格</strong> 黑金 / 烫金 / 玻璃拟态</span>
+        </div>
+        <div class="lh-cta">
+          <a class="lh-btn lh-btn-primary" href="#demos">查看双方案 ↓</a>
+          <a class="lh-btn lh-btn-ghost" href="https://github.com/linxuesia/golden-dragon-landing" target="_blank" rel="noopener">GitHub ↗</a>
+        </div>
       </div>
-      <div class="status-row" aria-live="polite">
-        <span id="statusDot" class="status-dot" aria-hidden="true"></span>
-        <span id="statusText">等待启动</span>
+
+      <div class="lh-scroll-hint">
+        <span>SCROLL</span>
+        <i class="lh-scroll-line"></i>
       </div>
-      <button id="startButton" type="button">
-        <svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
-        <span>启动自动化</span>
-      </button>
     </section>
-    <section class="log-panel" aria-labelledby="log-title">
-      <header><h2 id="log-title">运行日志</h2><span id="logCount">0 条</span></header>
-      <div id="logList" class="log-list" role="log" aria-live="polite" aria-relevant="additions">
-        <p class="empty-log">启动后，运行信息会显示在这里。</p>
+
+    <!-- 双方案对比 -->
+    <section class="demos" id="demos">
+      <div class="demos-head">
+        <span class="demos-num">02</span>
+        <h2 class="demos-title">两个实现版本</h2>
+        <p class="demos-sub">同样的视觉语言，两种技术路径。点击进入对应 demo。</p>
+      </div>
+
+      <div class="demo-grid">
+        <!-- Three.js 卡 -->
+        <article class="demo-card demo-3d">
+          <a class="demo-link" href="./src/threejs-demo/index.html">
+            <div class="demo-preview">
+              <img src="./assets/longwei-dragon-head-D6C9heek.png" alt="Three.js 龙模型预览" loading="lazy" />
+              <div class="demo-overlay">
+                <span class="demo-cta">进入 Three.js 实时渲染 →</span>
+              </div>
+              <div class="demo-tag demo-tag-3d">THREE.JS</div>
+            </div>
+            <div class="demo-body">
+              <h3 class="demo-name">实时 3D 龙模型</h3>
+              <p class="demo-desc">
+                glTF 龙模型 + 自定义雾效 shader + ACES 调色。WebGL 实时渲染，
+                60 FPS，零视频文件依赖。鼠标拖拽旋转、滚轮缩放、暂停/继续、雾效开关。
+              </p>
+              <ul class="demo-features">
+                <li>glTF 19MB · 4 张 PBR 纹理</li>
+                <li>OrbitControls 交互</li>
+                <li>220 粒子雾效（自写 GLSL）</li>
+                <li>暖金主光 + 薄青边光 + 橘底光</li>
+              </ul>
+              <div class="demo-stack">
+                <span>Three.js</span><span>WebGL</span><span>GLSL</span><span>GLTF</span>
+              </div>
+              <div class="demo-pros">
+                <strong>适合：</strong>实时交互 / 数据驱动 / 文件小
+              </div>
+            </div>
+          </a>
+        </article>
+
+        <!-- 视频卡 -->
+        <article class="demo-card demo-video">
+          <a class="demo-link" href="./src/video-demo/index.html">
+            <div class="demo-preview">
+              <video muted loop playsinline preload="metadata" poster="" onmouseenter="this.play()" onmouseleave="this.pause()">
+                <source src="./assets/v1-CHGTgvfe.mp4" type="video/mp4" />
+              </video>
+              <div class="demo-overlay">
+                <span class="demo-cta">进入视频动效版 →</span>
+              </div>
+              <div class="demo-tag demo-tag-video">VIDEO</div>
+            </div>
+            <div class="demo-body">
+              <h3 class="demo-name">视频动效主视觉</h3>
+              <p class="demo-desc">
+                4 段高品质龙主题 MP4（入场 / 呼吸 / 腾空 / 净化），淡入淡出切换，
+                配合加载动画 + HUD 进度 + 声效开关 + 错误重试。
+              </p>
+              <ul class="demo-features">
+                <li>4 段 MP4 循环 + 渐变切换</li>
+                <li>暖金 / 薄青叠加滤镜</li>
+                <li>loading + 进度条 + 声效</li>
+                <li>prefers-reduced-motion 兼容</li>
+              </ul>
+              <div class="demo-stack">
+                <span>HTML5 Video</span><span>CSS Filter</span><span>Vanilla JS</span><span>~10MB</span>
+              </div>
+              <div class="demo-pros">
+                <strong>适合：</strong>极致真实感 / 美术控场 / 离线播放
+              </div>
+            </div>
+          </a>
+        </article>
       </div>
     </section>
-  </main>
-</body>
+
+    <!-- 技术 -->
+    <section class="stack" id="stack">
+      <div class="stack-head">
+        <span class="demos-num">03</span>
+        <h2 class="demos-title">技术取舍</h2>
+      </div>
+      <div class="stack-table">
+        <div class="stack-row stack-row-head">
+          <span></span>
+          <span>Three.js 实时渲染</span>
+          <span>视频动效</span>
+        </div>
+        <div class="stack-row">
+          <span class="stack-label">首屏依赖</span>
+          <span>~20MB 模型 + 7MB 纹理</span>
+          <span>~10MB 4 段 MP4</span>
+        </div>
+        <div class="stack-row">
+          <span class="stack-label">首屏耗时</span>
+          <span>依赖网络 + 设备</span>
+          <span>依赖网络 + 视频解码</span>
+        </div>
+        <div class="stack-row">
+          <span class="stack-label">真实感</span>
+          <span>中等（PBR + 实时光照）</span>
+          <span>极高（逐帧美术）</span>
+        </div>
+        <div class="stack-row">
+          <span class="stack-label">交互性</span>
+          <span>强（可拖拽 / 缩放）</span>
+          <span>弱（仅播放控制）</span>
+        </div>
+        <div class="stack-row">
+          <span class="stack-label">修改成本</span>
+          <span>改 shader / 材质即可</span>
+          <span>需要重新渲染视频</span>
+        </div>
+        <div class="stack-row">
+          <span class="stack-label">适用设备</span>
+          <span>需要 WebGL2 + 较好 GPU</span>
+          <span>几乎所有现代设备</span>
+        </div>
+        <div class="stack-row">
+          <span class="stack-label">维护</span>
+          <span>代码 + 模型版本管理</span>
+          <span>仅视频文件版本管理</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 联系 -->
+    <section class="contact" id="contact">
+      <h2 class="contact-title">聊一聊</h2>
+      <p class="contact-sub">远程工作 / 合作 / 私单</p>
+      <div class="contact-links">
+        <a href="mailto:linxue.sia@gmail.com" class="contact-link">
+          <span class="cl-icon">@</span>
+          <span>linxue.sia@gmail.com</span>
+        </a>
+        <a href="https://github.com/linxuesia" target="_blank" rel="noopener" class="contact-link">
+          <span class="cl-icon">GH</span>
+          <span>github.com/linxuesia</span>
+        </a>
+        <a href="https://linxuesia.homes/" target="_blank" rel="noopener" class="contact-link">
+          <span class="cl-icon">主</span>
+          <span>linxuesia.homes · 我的简历</span>
+        </a>
+      </div>
+      <div class="footer-line">© 2026 龙震电商 demo · by sia</div>
+    </section>
+
+  </body>
 </html>
