@@ -71,8 +71,8 @@ bottomGlow.position.set(0, -0.5, 1.5);
 scene.add(bottomGlow);
 
 // === 雾效 ===
-const mist = new DragonMistSystem({ count: 220 });
-scene.add(mist);
+const mist = new DragonMistSystem(scene, { count: 220 });
+// DragonMistSystem 内部自动把 group add 到 parent，不再 scene.add(mist)
 
 // === 加载龙模型 ===
 let dragon = null;
@@ -82,7 +82,7 @@ let mistEnabled = true;
 const loader = new GLTFLoader();
 
 loader.load(
-  `${import.meta.env.BASE_URL}dragon/scene.gltf`,
+  `${import.meta.env.BASE_URL}../../dragon/scene.gltf`,
   (gltf) => {
     dragon = gltf.scene;
     dragon.scale.set(0.9, 0.9, 0.9);
@@ -135,7 +135,7 @@ rotateToggle.addEventListener('click', () => {
 
 mistToggle.addEventListener('click', () => {
   mistEnabled = !mistEnabled;
-  mist.visible = mistEnabled;
+  mist.setVisible(mistEnabled);
   deckState.textContent = mistEnabled ? '雾效已开' : '雾效已关';
 });
 
