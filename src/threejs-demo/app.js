@@ -161,20 +161,25 @@ let lastTime = performance.now();
 
 // === 动画循环 ===
 const clock = new THREE.Clock();
+const dragonPos = new THREE.Vector3();
+const dragonVel = new THREE.Vector3(0, 0, 0);
+const prevDragonPos = new THREE.Vector3();
 function tick() {
   requestAnimationFrame(tick);
   const dt = clock.getDelta();
   const t = clock.getElapsedTime();
 
-  if (autoRotate && dragon) {
-    dragon.rotation.y += dt * 0.25;
-  }
   if (dragon) {
+    if (autoRotate) dragon.rotation.y += dt * 0.25;
     // 龙头微微上抬 + 呼吸
     dragon.position.y = Math.sin(t * 0.8) * 0.05;
+    // 计算龙的世界坐标 + 速度（给雾效）
+    dragon.getWorldPosition(dragonPos);
+    dragonVel.copy(dragonPos).sub(prevDragonPos).divideScalar(Math.max(dt, 1e-4));
+    prevDragonPos.copy(dragonPos);
   }
 
-  mist.update(dt, t);
+  mist.update(dt, dragonPos, dragonVel);
   controls.update();
   renderer.render(scene, camera);
 
